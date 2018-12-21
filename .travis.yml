@@ -1,5 +1,7 @@
 language: c
+os: osx
 osx_image: xcode10
+compiler: clang
 sudo: false
 script:
     - clang -coverage -O0 tests/test.c -o test
