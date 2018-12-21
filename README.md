@@ -3,6 +3,7 @@
 [![Build Status](https://travis-ci.org/wizjin/xps.svg?branch=master)](https://travis-ci.org/wizjin/xps)
 [![codecov](https://codecov.io/gh/wizjin/xps/branch/master/graph/badge.svg)](https://codecov.io/gh/wizjin/xps)
 [![CocoaPods Compatible](https://img.shields.io/cocoapods/v/XPS.svg)](https://img.shields.io/cocoapods/v/XPS.svg)
+[![Carthage Compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
 [![Platform](https://img.shields.io/cocoapods/p/XPS.svg?style=flat)](http://cocoadocs.org/docsets/XPS)
 
 XPS is a light-weight X proxy system library for iOS and macOS.
