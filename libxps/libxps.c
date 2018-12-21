@@ -8,7 +8,7 @@
 
 #include "libxps.h"
 
-static const char *version = "0.0.1";
+static const char *version = "0.1.0";
 
 const char *xps_version(void) {
     return version;
