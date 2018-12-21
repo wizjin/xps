@@ -4,9 +4,7 @@ osx_image: xcode10
 compiler: clang
 sudo: false
 script:
-    - clang -coverage -O0 tests/test.c -o test
-    - ./test
-    - gcov test.c
+    - make test
 
 after_success:
     - bash <(curl -s https://codecov.io/bash)
