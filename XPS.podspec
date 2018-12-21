@@ -1,6 +1,6 @@
 Pod::Spec.new do |spec|
   spec.name         = 'XPS'
-  spec.version      = '0.0.1'
+  spec.version      = '0.1.0'
   spec.authors      = { 'wizjin' => 'wizjin@icloud.com' }
   spec.license      = { :type => 'MIT', :file => 'LICENSE' }
   spec.homepage     = 'https://github.com/wizjin/xps'

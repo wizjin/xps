@@ -10,13 +10,7 @@
 #define __LIBXPS_H__
 
 #ifdef __OBJC__
-#ifdef TARGET_OS_IPHONE
-#import <UIKit/UIKit.h>
-#elif TARGET_OS_MAC
-#import <Cocoa/Cocoa.h>
-#else
 #import <Foundation/Foundation.h>
-#endif
 #endif
 
 #ifdef FOUNDATION_EXPORT
