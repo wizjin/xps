@@ -7,12 +7,12 @@
 
 #import <UIKit/UIKit.h>
 
-//! Project version number for XPS_iOS.
+//! Project version number for XPS-iOS.
 FOUNDATION_EXPORT double XPS_iOSVersionNumber;
 
-//! Project version string for XPS_iOS.
+//! Project version string for XPS-iOS.
 FOUNDATION_EXPORT const unsigned char XPS_iOSVersionString[];
 
-// In this header, you should import all the public headers of your framework using statements like #import <XPS_iOS/PublicHeader.h>
+// In this header, you should import all the public headers of your framework using statements like #import <XPS-iOS/PublicHeader.h>
 
 

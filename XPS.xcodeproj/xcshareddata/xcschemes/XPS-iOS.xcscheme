@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "6D51A52E21CCF38500545662"
-               BuildableName = "XPS_iOS.framework"
+               BuildableName = "XPS.framework"
                BlueprintName = "XPS-iOS"
                ReferencedContainer = "container:XPS.xcodeproj">
             </BuildableReference>
@@ -46,7 +46,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "6D51A52E21CCF38500545662"
-            BuildableName = "XPS_iOS.framework"
+            BuildableName = "XPS.framework"
             BlueprintName = "XPS-iOS"
             ReferencedContainer = "container:XPS.xcodeproj">
          </BuildableReference>
@@ -64,7 +64,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "6D51A52E21CCF38500545662"
-            BuildableName = "XPS_iOS.framework"
+            BuildableName = "XPS.framework"
             BlueprintName = "XPS-iOS"
             ReferencedContainer = "container:XPS.xcodeproj">
          </BuildableReference>

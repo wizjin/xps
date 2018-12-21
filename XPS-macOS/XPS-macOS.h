@@ -7,12 +7,12 @@
 
 #import <Cocoa/Cocoa.h>
 
-//! Project version number for XPS_macOS.
+//! Project version number for XPS-macOS.
 FOUNDATION_EXPORT double XPS_macOSVersionNumber;
 
-//! Project version string for XPS_macOS.
+//! Project version string for XPS-macOS.
 FOUNDATION_EXPORT const unsigned char XPS_macOSVersionString[];
 
-// In this header, you should import all the public headers of your framework using statements like #import <XPS_macOS/PublicHeader.h>
+// In this header, you should import all the public headers of your framework using statements like #import <XPS-macOS/PublicHeader.h>
 
 
