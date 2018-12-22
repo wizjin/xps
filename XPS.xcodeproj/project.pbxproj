@@ -13,6 +13,27 @@
 		6D51A54921CCF41E00545662 /* libxps.h in Headers */ = {isa = PBXBuildFile; fileRef = 6D51A54721CCF41E00545662 /* libxps.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		6D51A54A21CCF42700545662 /* libxps.h in Headers */ = {isa = PBXBuildFile; fileRef = 6D51A54721CCF41E00545662 /* libxps.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		6D51A54B21CCF42900545662 /* libxps.c in Sources */ = {isa = PBXBuildFile; fileRef = 6D51A54621CCF41E00545662 /* libxps.c */; };
+		6DEFC16821CE098B00F55D08 /* XPS.h in Headers */ = {isa = PBXBuildFile; fileRef = 6DEFC16721CE098300F55D08 /* XPS.h */; };
+		6DEFC16921CE098C00F55D08 /* XPS.h in Headers */ = {isa = PBXBuildFile; fileRef = 6DEFC16721CE098300F55D08 /* XPS.h */; };
+		6DEFC16D21CE09F600F55D08 /* xps_core.c in Sources */ = {isa = PBXBuildFile; fileRef = 6DEFC16C21CE09F600F55D08 /* xps_core.c */; };
+		6DEFC16E21CE0A2500F55D08 /* xps_core.c in Sources */ = {isa = PBXBuildFile; fileRef = 6DEFC16C21CE09F600F55D08 /* xps_core.c */; };
+		6DEFC16F21CE0A2500F55D08 /* xps_core.c in Sources */ = {isa = PBXBuildFile; fileRef = 6DEFC16C21CE09F600F55D08 /* xps_core.c */; };
+		6DEFC17021CE0A2800F55D08 /* xps_core.h in Headers */ = {isa = PBXBuildFile; fileRef = 6DEFC16B21CE09F600F55D08 /* xps_core.h */; };
+		6DEFC17121CE0A2900F55D08 /* xps_core.h in Headers */ = {isa = PBXBuildFile; fileRef = 6DEFC16B21CE09F600F55D08 /* xps_core.h */; };
+		6DEFC17421CE0B4800F55D08 /* xps_logger.h in Headers */ = {isa = PBXBuildFile; fileRef = 6DEFC17321CE0B4800F55D08 /* xps_logger.h */; };
+		6DEFC17521CE0B4800F55D08 /* xps_logger.h in Headers */ = {isa = PBXBuildFile; fileRef = 6DEFC17321CE0B4800F55D08 /* xps_logger.h */; };
+		6DEFC17821CE169B00F55D08 /* xps_sys.c in Sources */ = {isa = PBXBuildFile; fileRef = 6DEFC17721CE169B00F55D08 /* xps_sys.c */; };
+		6DEFC17921CE172D00F55D08 /* xps_sys.c in Sources */ = {isa = PBXBuildFile; fileRef = 6DEFC17721CE169B00F55D08 /* xps_sys.c */; };
+		6DEFC17A21CE172E00F55D08 /* xps_sys.c in Sources */ = {isa = PBXBuildFile; fileRef = 6DEFC17721CE169B00F55D08 /* xps_sys.c */; };
+		6DEFC17B21CE173700F55D08 /* xps_config.h in Headers */ = {isa = PBXBuildFile; fileRef = 6DEFC17221CE0A4A00F55D08 /* xps_config.h */; };
+		6DEFC17C21CE173800F55D08 /* xps_config.h in Headers */ = {isa = PBXBuildFile; fileRef = 6DEFC17221CE0A4A00F55D08 /* xps_config.h */; };
+		6DEFC17D21CE173C00F55D08 /* xps_sys.h in Headers */ = {isa = PBXBuildFile; fileRef = 6DEFC17621CE169B00F55D08 /* xps_sys.h */; };
+		6DEFC17E21CE173D00F55D08 /* xps_sys.h in Headers */ = {isa = PBXBuildFile; fileRef = 6DEFC17621CE169B00F55D08 /* xps_sys.h */; };
+		6DEFC18121CE1AB900F55D08 /* xps_malloc.c in Sources */ = {isa = PBXBuildFile; fileRef = 6DEFC18021CE1AB900F55D08 /* xps_malloc.c */; };
+		6DEFC18221CE35C600F55D08 /* xps_malloc.h in Headers */ = {isa = PBXBuildFile; fileRef = 6DEFC17F21CE1AB900F55D08 /* xps_malloc.h */; };
+		6DEFC18321CE35C600F55D08 /* xps_malloc.h in Headers */ = {isa = PBXBuildFile; fileRef = 6DEFC17F21CE1AB900F55D08 /* xps_malloc.h */; };
+		6DEFC18421CE35C800F55D08 /* xps_malloc.c in Sources */ = {isa = PBXBuildFile; fileRef = 6DEFC18021CE1AB900F55D08 /* xps_malloc.c */; };
+		6DEFC18521CE35C900F55D08 /* xps_malloc.c in Sources */ = {isa = PBXBuildFile; fileRef = 6DEFC18021CE1AB900F55D08 /* xps_malloc.c */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -36,6 +57,15 @@
 		6D51A54021CCF3D800545662 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6D51A54621CCF41E00545662 /* libxps.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = libxps.c; sourceTree = "<group>"; };
 		6D51A54721CCF41E00545662 /* libxps.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = libxps.h; sourceTree = "<group>"; };
+		6DEFC16721CE098300F55D08 /* XPS.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XPS.h; sourceTree = "<group>"; };
+		6DEFC16B21CE09F600F55D08 /* xps_core.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = xps_core.h; sourceTree = "<group>"; };
+		6DEFC16C21CE09F600F55D08 /* xps_core.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = xps_core.c; sourceTree = "<group>"; };
+		6DEFC17221CE0A4A00F55D08 /* xps_config.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = xps_config.h; sourceTree = "<group>"; };
+		6DEFC17321CE0B4800F55D08 /* xps_logger.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = xps_logger.h; sourceTree = "<group>"; };
+		6DEFC17621CE169B00F55D08 /* xps_sys.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = xps_sys.h; sourceTree = "<group>"; };
+		6DEFC17721CE169B00F55D08 /* xps_sys.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = xps_sys.c; sourceTree = "<group>"; };
+		6DEFC17F21CE1AB900F55D08 /* xps_malloc.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = xps_malloc.h; sourceTree = "<group>"; };
+		6DEFC18021CE1AB900F55D08 /* xps_malloc.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = xps_malloc.c; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,10 +141,27 @@
 		6D51A54521CCF41E00545662 /* libxps */ = {
 			isa = PBXGroup;
 			children = (
+				6DEFC16A21CE09CA00F55D08 /* core */,
+				6DEFC16721CE098300F55D08 /* XPS.h */,
 				6D51A54721CCF41E00545662 /* libxps.h */,
 				6D51A54621CCF41E00545662 /* libxps.c */,
 			);
 			path = libxps;
+			sourceTree = "<group>";
+		};
+		6DEFC16A21CE09CA00F55D08 /* core */ = {
+			isa = PBXGroup;
+			children = (
+				6DEFC17221CE0A4A00F55D08 /* xps_config.h */,
+				6DEFC17321CE0B4800F55D08 /* xps_logger.h */,
+				6DEFC17621CE169B00F55D08 /* xps_sys.h */,
+				6DEFC17721CE169B00F55D08 /* xps_sys.c */,
+				6DEFC16B21CE09F600F55D08 /* xps_core.h */,
+				6DEFC16C21CE09F600F55D08 /* xps_core.c */,
+				6DEFC17F21CE1AB900F55D08 /* xps_malloc.h */,
+				6DEFC18021CE1AB900F55D08 /* xps_malloc.c */,
+			);
+			name = core;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -124,6 +171,12 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6DEFC17B21CE173700F55D08 /* xps_config.h in Headers */,
+				6DEFC17421CE0B4800F55D08 /* xps_logger.h in Headers */,
+				6DEFC18221CE35C600F55D08 /* xps_malloc.h in Headers */,
+				6DEFC17D21CE173C00F55D08 /* xps_sys.h in Headers */,
+				6DEFC16821CE098B00F55D08 /* XPS.h in Headers */,
+				6DEFC17121CE0A2900F55D08 /* xps_core.h in Headers */,
 				6D51A54921CCF41E00545662 /* libxps.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -132,6 +185,12 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6DEFC17C21CE173800F55D08 /* xps_config.h in Headers */,
+				6DEFC17521CE0B4800F55D08 /* xps_logger.h in Headers */,
+				6DEFC18321CE35C600F55D08 /* xps_malloc.h in Headers */,
+				6DEFC17E21CE173D00F55D08 /* xps_sys.h in Headers */,
+				6DEFC16921CE098C00F55D08 /* XPS.h in Headers */,
+				6DEFC17021CE0A2800F55D08 /* xps_core.h in Headers */,
 				6D51A54A21CCF42700545662 /* libxps.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -252,8 +311,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6DEFC16D21CE09F600F55D08 /* xps_core.c in Sources */,
 				6D4E185821CE016800B4625B /* main.c in Sources */,
+				6DEFC18121CE1AB900F55D08 /* xps_malloc.c in Sources */,
 				6D4E185C21CE01E400B4625B /* libxps.c in Sources */,
+				6DEFC17821CE169B00F55D08 /* xps_sys.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -261,7 +323,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6DEFC16E21CE0A2500F55D08 /* xps_core.c in Sources */,
 				6D51A54821CCF41E00545662 /* libxps.c in Sources */,
+				6DEFC17921CE172D00F55D08 /* xps_sys.c in Sources */,
+				6DEFC18421CE35C800F55D08 /* xps_malloc.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -269,7 +334,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6DEFC16F21CE0A2500F55D08 /* xps_core.c in Sources */,
 				6D51A54B21CCF42900545662 /* libxps.c in Sources */,
+				6DEFC17A21CE172E00F55D08 /* xps_sys.c in Sources */,
+				6DEFC18521CE35C900F55D08 /* xps_malloc.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

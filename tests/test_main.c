@@ -9,9 +9,13 @@
 #include <stdlib.h>
 #include <check.h>
 #include "libxps.h"
+#include "xps_core.h"
 
 START_TEST(test_libxps_core) {
 	ck_assert_ptr_nonnull(xps_version());
+	xps_core_t *core = xps_create_core();
+	ck_assert_ptr_nonnull(core);
+	xps_destory_core(core);
 }
 END_TEST
 

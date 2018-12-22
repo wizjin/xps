@@ -5,7 +5,9 @@ TSRCS   = $(SRCS) $(wildcard tests/*.c)
 OBJS    = $(addprefix $(OUTDIR)/, $(TSRCS:.c=.o))
 TARGET  = $(OUTDIR)/test
 CC = clang
-CFLAGS += -coverage -g -O0 -I ./libxps
+CFLAGS += -coverage -g -O0 \
+		  -std=gnu11 -fmodules \
+		  -I ./libxps
 LDFLAGS += -lcheck
 
 $(OBJS): $(OUTDIR)/%.o: %.c
