@@ -3,6 +3,8 @@ os: osx
 osx_image: xcode10
 compiler: clang
 sudo: false
+before_install:
+    - brew insatll check
 script:
     - make test
 
@@ -13,4 +15,3 @@ branches:
     only:
         - master
         - develop
-
