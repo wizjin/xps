@@ -11,7 +11,7 @@
 #include "libxps.h"
 
 START_TEST(test_libxps_core) {
-	ck_assert(xps_version() != NULL);
+	ck_assert_ptr_nonnull(xps_version());
 }
 END_TEST
 
