@@ -15,6 +15,7 @@ XPS_API xps_core_t *xps_create_core(void) {
         xps_core_t *core = xps_calloc(sizeof(xps_core_t));
         if (core != NULL) {
             log_info("xps core created.");
+            core->inited = 1;
             return core;
         }
         xps_sys_fini();
@@ -24,7 +25,10 @@ XPS_API xps_core_t *xps_create_core(void) {
 
 XPS_API void xps_destory_core(xps_core_t *core) {
     if (core != NULL) {
-        log_info("xps core destroyed.");
+        if (core->inited) {
+            core->inited = 0;
+            log_info("xps core destroyed.");
+        }
         xps_free(core);
     }
     xps_sys_fini();

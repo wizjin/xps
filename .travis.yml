@@ -4,7 +4,7 @@ osx_image: xcode10
 compiler: clang
 sudo: false
 before_install:
-    - brew insatll check
+    - brew install check
 script:
     - make test
 
