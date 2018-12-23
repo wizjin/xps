@@ -10,8 +10,8 @@
 #include "xps_sys.h"
 #include "xps_malloc.h"
 
-XPS_API xps_core_t *xps_create_core(void) {
-    if (xps_sys_init() == 0) {
+XPS_API xps_core_t *xps_core_create(void) {
+    if (xps_sys_init() == XPS_OK) {
         xps_core_t *core = xps_calloc(sizeof(xps_core_t));
         if (core != NULL) {
             log_info("xps core created.");
@@ -23,7 +23,7 @@ XPS_API xps_core_t *xps_create_core(void) {
     return NULL;
 }
 
-XPS_API void xps_destory_core(xps_core_t *core) {
+XPS_API void xps_core_destory(xps_core_t *core) {
     if (core != NULL) {
         if (core->inited) {
             core->inited = 0;

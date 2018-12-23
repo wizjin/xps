@@ -21,13 +21,3 @@ XPS_API int xps_atoi(const char *line, size_t n) {
     }
     return XPS_ERROR;
 }
-
-XPS_API const char *xps_strlchr(const char *p, const char *last, char c) {
-    while (p < last) {
-        if (*p == c) {
-            return p;
-        }
-        p++;
-    }
-    return NULL;
-}

@@ -11,9 +11,9 @@
 
 int main(int argc, const char * argv[]) {
     printf("start xps version: %s\n", xps_version());
-    xps_core_t *core = xps_create_core();
+    xps_core_t *core = xps_core_create();
     if (core != NULL) {
-        xps_destory_core(core);
+        xps_core_destory(core);
     }
     return 0;
 }

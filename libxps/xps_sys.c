@@ -10,6 +10,7 @@
 #include <signal.h>
 #include "xps_logger.h"
 #include "xps_malloc.h"
+#include "xps_palloc.h"
 
 static int xps_sys_init_count = 0;
 
@@ -26,12 +27,14 @@ XPS_API int xps_sys_init(void) {
         // init malloc system.
         xps_pagesize = getpagesize();
         xps_memory_reset();
+        xps_pool_init();
     }
-    return 0;
+    return XPS_OK;
 }
 
 XPS_API void xps_sys_fini(void) {
     if (--xps_sys_init_count <= 0) {
+        xps_pool_fini();
         size_t used = xps_get_used_memory();
         if (used > 0) {
             log_warn("find leaked memory: %zu", used);

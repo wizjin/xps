@@ -13,13 +13,13 @@
 
 XPS_EXTERN size_t xps_pagesize;
 
-XPS_API void xps_memory_reset(void);
-XPS_API size_t xps_get_used_memory(void);
+XPS_PRIVATE void xps_memory_reset(void);
+XPS_PRIVATE size_t xps_get_used_memory(void);
 XPS_API void *xps_memalign(size_t alignment, size_t size);
 XPS_API void *xps_calloc(size_t size);
 XPS_API void xps_free(void *p);
 
-#define xps_malloc(_size)   xps_memalign(XPS_MEMORY_ALIGNMENT, (_size))
+#define xps_malloc(_size)   xps_memalign(XPS_ALIGNMENT, (_size))
 
 
 #endif /* __XPS_MALLOC_H__ */

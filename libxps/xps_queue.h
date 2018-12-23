@@ -58,7 +58,7 @@ struct xps_queue {
     (x)->prev->next = (x)->next
 
 #define xps_queue_data(q, type, link)               \
-    (type *) ((uint8_t *)q - offsetof(type, link))
+    xps_structof(q, type, link)
 
 XPS_API void xps_queue_sort(xps_queue_t *queue, int (*cmp)(const xps_queue_t *, const xps_queue_t *));
 

@@ -14,11 +14,11 @@
 XPS_EXTERN_DEFINE size_t xps_pagesize;
 static atomic_size_t xps_used_memory = 0;
 
-XPS_API void xps_memory_reset(void) {
+XPS_PRIVATE void xps_memory_reset(void) {
     atomic_store_explicit(&xps_used_memory, 0, memory_order_relaxed);
 }
 
-XPS_API size_t xps_get_used_memory(void) {
+XPS_PRIVATE size_t xps_get_used_memory(void) {
     return xps_used_memory;
 }
 
