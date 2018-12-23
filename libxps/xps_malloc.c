@@ -23,8 +23,8 @@ XPS_PRIVATE size_t xps_get_used_memory(void) {
 }
 
 XPS_API void *xps_memalign(size_t alignment, size_t size) {
-    // Note: sometime memory maybe overflow.
-    if (atomic_load_explicit(&xps_used_memory, memory_order_relaxed) < XPS_MAX_MALLOC_MEMORY) {
+    // Note: maybe memory overflow when multi-thread.
+    if (atomic_load_explicit(&xps_used_memory, memory_order_relaxed) + size < XPS_USED_MEMORY_MAX) {
         void *p;
         int err = posix_memalign(&p, alignment, size);
         if (err != 0) {

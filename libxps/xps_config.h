@@ -23,12 +23,12 @@
 
 #define XPS_ALIGNMENT                   sizeof(unsigned long)  // must geater 4
 
-#ifndef XPS_MAX_MALLOC_MEMORY
-#   define XPS_MAX_MALLOC_MEMORY        (8 * 1024 * 1024)
+#ifndef XPS_USED_MEMORY_MAX
+#   define XPS_USED_MEMORY_MAX          (8 * 1024 * 1024)
 #endif
 
-#ifndef XPS_DEFAULT_POOL_SIZE
-#   define XPS_DEFAULT_POOL_SIZE        (16 * 1024)
+#ifndef XPS_POOL_DEFAULT_SIZE
+#   define XPS_POOL_DEFAULT_SIZE        (16 * 1024)
 #endif
 
 // Misc Macro

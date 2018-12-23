@@ -189,8 +189,8 @@
 		6DCE0D8021CF4C2400D3936C /* module */ = {
 			isa = PBXGroup;
 			children = (
-				6DCE0D8221CF4C3900D3936C /* xps_module.c */,
 				6DCE0D8121CF4C3900D3936C /* xps_module.h */,
+				6DCE0D8221CF4C3900D3936C /* xps_module.c */,
 			);
 			name = module;
 			sourceTree = "<group>";

@@ -29,43 +29,45 @@
 #   endif
 #endif
 
-#define LOG_FMT(_tag, _format)          "%s | " _tag " | " _format
+XPS_EXTERN FILE* xps_logger_file;
+
+#define log_fmt(_tag, _format)          "%s | " _tag " | " _format
 #define log_none(_format, ...)          ((void)0)
 #define log_output(_format, _args...)   \
     do {                                \
         char nowstr[32];                \
         struct tm ft;                   \
-        time_t now = time(NULL);        \
-        strftime(nowstr, sizeof(nowstr), "%Y-%m-%d %H:%M:%S", localtime_r(&now, &ft));  \
-        fprintf(stderr, _format "\n", nowstr, ## _args);  \
+        time_t n = time(NULL);          \
+        strftime(nowstr, sizeof(nowstr), "%Y-%m-%d %H:%M:%S", localtime_r(&n, &ft));  \
+        fprintf(xps_logger_file, _format "\n", nowstr, ## _args);    \
     } while(0)
 
 #if LOG_LEVEL >= LOG_LEVEL_ERROR
-#   define log_error(_format, _args...) log_output(LOG_FMT("ERROR", _format), ## _args)
+#   define log_error(_format, _args...) log_output(log_fmt("ERROR", _format), ## _args)
 #else
 #   define log_error                    log_none
 #endif
 
 #if LOG_LEVEL >= LOG_LEVEL_WARN
-#   define log_warn(_format, _args...)  log_output(LOG_FMT("WARN", _format), ## _args)
+#   define log_warn(_format, _args...)  log_output(log_fmt("WARN", _format), ## _args)
 #else
 #   define log_warn                     log_none
 #endif
 
 #if LOG_LEVEL >= LOG_LEVEL_INFO
-#   define log_info(_format, _args...)  log_output(LOG_FMT("INFO", _format), ## _args)
+#   define log_info(_format, _args...)  log_output(log_fmt("INFO", _format), ## _args)
 #else
 #   define log_info                     log_none
 #endif
 
 #if LOG_LEVEL >= LOG_LEVEL_DEBUG
-#   define log_debug(_format, _args...) log_output(LOG_FMT("DEBUG", _format), ## _args)
+#   define log_debug(_format, _args...) log_output(log_fmt("DEBUG", _format), ## _args)
 #else
 #   define log_debug                    log_none
 #endif
 
 #if LOG_LEVEL >= LOG_LEVEL_TRACE
-#   define log_trace(_format, _args...) log_output(LOG_FMT("TRACE", _format), ## _args)
+#   define log_trace(_format, _args...) log_output(log_fmt("TRACE", _format), ## _args)
 #else
 #   define log_trace                    log_none
 #endif
