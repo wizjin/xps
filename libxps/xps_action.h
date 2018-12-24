@@ -20,9 +20,8 @@ struct xps_action {
     void            *ctx;
 };
 
-
-XPS_API int xps_action_call(xps_action_t *head);
-XPS_API int xps_action_push(xps_action_t *head, xps_pool_t *pool, xps_action_pt action, void *ctx);
+XPS_API int xps_action_call(xps_action_t *sentinel);
+XPS_API int xps_action_push(xps_action_t *sentinel, xps_pool_t *pool, xps_action_pt action, void *ctx);
 
 
 #endif /* __XPS_ACTION_H__ */

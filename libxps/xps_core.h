@@ -11,15 +11,16 @@
 #include "xps_config.h"
 #include <pthread.h>
 #include "xps_action.h"
+#include "xps_event.h"
 
 typedef struct xps_core             xps_core_t;
-typedef struct xps_event_manager    xps_event_manager_t;
 
 struct xps_core {
     xps_pool_t          *pool;
-    xps_event_manager_t *event_manager;
+    xps_event_actions_t *evacts;
     xps_queue_t         modules;
     xps_action_t        workers;
+    xps_event_notify_t  *notify;
     pthread_t           worker;
 
     unsigned            inited:1;

@@ -35,7 +35,11 @@ XPS_API int xps_module_load(xps_core_t *core, ...);
     .type = (_type),
 
 // Module Types
-#define XPS_MODULE_TYPE_EVENT   2
+#define XPS_MODULE_TYPE_SYS                 1
+#define XPS_MODULE_TYPE_EVENT               2
+
+#define XPS_MODULE_SYS_DECL(_name)          XPS_MODULE_DECL(_name, xps_module_t, XPS_MODULE_TYPE_SYS)
+
 
 
 #endif /* __XPS_MODULE_H__ */

@@ -11,8 +11,5 @@
 #include "xps_config.h"
 #include "xps_event.h"
 
-typedef struct xps_kqueue xps_kqueue_t;
-
-
 
 #endif /* __XPS_KQUEUE_H__ */
