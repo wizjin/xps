@@ -13,9 +13,9 @@
 
 START_TEST(test_libxps_core) {
 	ck_assert_ptr_nonnull(xps_version());
-	xps_core_t *core = xps_create_core();
+	xps_core_t *core = xps_core_create();
 	ck_assert_ptr_nonnull(core);
-	xps_destory_core(core);
+	xps_core_destory(core);
 }
 END_TEST
 

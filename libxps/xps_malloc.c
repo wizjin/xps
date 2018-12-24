@@ -14,17 +14,17 @@
 XPS_EXTERN_DEFINE size_t xps_pagesize;
 static atomic_size_t xps_used_memory = 0;
 
-XPS_API void xps_memory_reset(void) {
+XPS_PRIVATE void xps_memory_reset(void) {
     atomic_store_explicit(&xps_used_memory, 0, memory_order_relaxed);
 }
 
-XPS_API size_t xps_get_used_memory(void) {
+XPS_PRIVATE size_t xps_get_used_memory(void) {
     return xps_used_memory;
 }
 
 XPS_API void *xps_memalign(size_t alignment, size_t size) {
-    // Note: sometime memory maybe overflow.
-    if (atomic_load_explicit(&xps_used_memory, memory_order_relaxed) < XPS_MAX_MALLOC_MEMORY) {
+    // Note: maybe memory overflow when multi-thread.
+    if (atomic_load_explicit(&xps_used_memory, memory_order_relaxed) + size < XPS_USED_MEMORY_MAX) {
         void *p;
         int err = posix_memalign(&p, alignment, size);
         if (err != 0) {
