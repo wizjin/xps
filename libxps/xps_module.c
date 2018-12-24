@@ -15,7 +15,7 @@ XPS_API int xps_module_load(xps_core_t *core, ...) {
     va_start(ap, core);
     xps_module_t *m;
     while ((m = va_arg(ap, xps_module_t *)) != NULL) {
-        if (m->loaded != 0) {
+        if (m->loaded == 0) {
             if (m->load != NULL && (res = m->load(core)) != XPS_OK) {
                 log_error("load %s module failed: %d", m->name.data, res);
                 break;

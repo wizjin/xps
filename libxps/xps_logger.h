@@ -12,6 +12,7 @@
 #include <time.h>
 #include <stdio.h>
 #include <errno.h>
+#include <string.h>
 
 #define LOG_LEVEL_NONE                  0x00
 #define LOG_LEVL_ALL                    0xff

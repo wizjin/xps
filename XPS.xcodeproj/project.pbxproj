@@ -7,6 +7,21 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6D1B587521D07D3500957DD8 /* xps_kqueue.h in Headers */ = {isa = PBXBuildFile; fileRef = 6D1B587321D07D3500957DD8 /* xps_kqueue.h */; };
+		6D1B587621D07D3500957DD8 /* xps_kqueue.h in Headers */ = {isa = PBXBuildFile; fileRef = 6D1B587321D07D3500957DD8 /* xps_kqueue.h */; };
+		6D1B587721D07D3500957DD8 /* xps_kqueue.c in Sources */ = {isa = PBXBuildFile; fileRef = 6D1B587421D07D3500957DD8 /* xps_kqueue.c */; };
+		6D1B587821D07D3500957DD8 /* xps_kqueue.c in Sources */ = {isa = PBXBuildFile; fileRef = 6D1B587421D07D3500957DD8 /* xps_kqueue.c */; };
+		6D1B587921D07D3500957DD8 /* xps_kqueue.c in Sources */ = {isa = PBXBuildFile; fileRef = 6D1B587421D07D3500957DD8 /* xps_kqueue.c */; };
+		6D1B587C21D07D4200957DD8 /* xps_event.h in Headers */ = {isa = PBXBuildFile; fileRef = 6D1B587A21D07D4200957DD8 /* xps_event.h */; };
+		6D1B587D21D07D4200957DD8 /* xps_event.h in Headers */ = {isa = PBXBuildFile; fileRef = 6D1B587A21D07D4200957DD8 /* xps_event.h */; };
+		6D1B587E21D07D4200957DD8 /* xps_event.c in Sources */ = {isa = PBXBuildFile; fileRef = 6D1B587B21D07D4200957DD8 /* xps_event.c */; };
+		6D1B587F21D07D4200957DD8 /* xps_event.c in Sources */ = {isa = PBXBuildFile; fileRef = 6D1B587B21D07D4200957DD8 /* xps_event.c */; };
+		6D1B588021D07D4200957DD8 /* xps_event.c in Sources */ = {isa = PBXBuildFile; fileRef = 6D1B587B21D07D4200957DD8 /* xps_event.c */; };
+		6D1B589821D0C65500957DD8 /* xps_action.h in Headers */ = {isa = PBXBuildFile; fileRef = 6D1B589621D0C65500957DD8 /* xps_action.h */; };
+		6D1B589921D0C65500957DD8 /* xps_action.h in Headers */ = {isa = PBXBuildFile; fileRef = 6D1B589621D0C65500957DD8 /* xps_action.h */; };
+		6D1B589A21D0C65500957DD8 /* xps_action.c in Sources */ = {isa = PBXBuildFile; fileRef = 6D1B589721D0C65500957DD8 /* xps_action.c */; };
+		6D1B589B21D0C65500957DD8 /* xps_action.c in Sources */ = {isa = PBXBuildFile; fileRef = 6D1B589721D0C65500957DD8 /* xps_action.c */; };
+		6D1B589C21D0C65500957DD8 /* xps_action.c in Sources */ = {isa = PBXBuildFile; fileRef = 6D1B589721D0C65500957DD8 /* xps_action.c */; };
 		6D4E185821CE016800B4625B /* main.c in Sources */ = {isa = PBXBuildFile; fileRef = 6D4E185721CE016800B4625B /* main.c */; };
 		6D4E185C21CE01E400B4625B /* libxps.c in Sources */ = {isa = PBXBuildFile; fileRef = 6D51A54621CCF41E00545662 /* libxps.c */; };
 		6D51A54821CCF41E00545662 /* libxps.c in Sources */ = {isa = PBXBuildFile; fileRef = 6D51A54621CCF41E00545662 /* libxps.c */; };
@@ -74,6 +89,12 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		6D1B587321D07D3500957DD8 /* xps_kqueue.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = xps_kqueue.h; sourceTree = "<group>"; };
+		6D1B587421D07D3500957DD8 /* xps_kqueue.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = xps_kqueue.c; sourceTree = "<group>"; };
+		6D1B587A21D07D4200957DD8 /* xps_event.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = xps_event.h; sourceTree = "<group>"; };
+		6D1B587B21D07D4200957DD8 /* xps_event.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = xps_event.c; sourceTree = "<group>"; };
+		6D1B589621D0C65500957DD8 /* xps_action.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = xps_action.h; sourceTree = "<group>"; };
+		6D1B589721D0C65500957DD8 /* xps_action.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = xps_action.c; sourceTree = "<group>"; };
 		6D4E185521CE016800B4625B /* xps */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = xps; sourceTree = BUILT_PRODUCTS_DIR; };
 		6D4E185721CE016800B4625B /* main.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = main.c; sourceTree = "<group>"; };
 		6D51A52F21CCF38500545662 /* XPS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = XPS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -128,6 +149,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6D1B587221D07CFB00957DD8 /* event */ = {
+			isa = PBXGroup;
+			children = (
+				6D1B587A21D07D4200957DD8 /* xps_event.h */,
+				6D1B587B21D07D4200957DD8 /* xps_event.c */,
+				6D1B587321D07D3500957DD8 /* xps_kqueue.h */,
+				6D1B587421D07D3500957DD8 /* xps_kqueue.c */,
+			);
+			name = event;
+			sourceTree = "<group>";
+		};
 		6D4E185621CE016800B4625B /* XPS */ = {
 			isa = PBXGroup;
 			children = (
@@ -189,6 +221,7 @@
 		6DCE0D8021CF4C2400D3936C /* module */ = {
 			isa = PBXGroup;
 			children = (
+				6D1B587221D07CFB00957DD8 /* event */,
 				6DCE0D8121CF4C3900D3936C /* xps_module.h */,
 				6DCE0D8221CF4C3900D3936C /* xps_module.c */,
 			);
@@ -217,6 +250,8 @@
 				6DEFC17321CE0B4800F55D08 /* xps_logger.h */,
 				6DEFC18F21CE4F0400F55D08 /* xps_string.h */,
 				6DEFC19021CE4F0400F55D08 /* xps_string.c */,
+				6D1B589621D0C65500957DD8 /* xps_action.h */,
+				6D1B589721D0C65500957DD8 /* xps_action.c */,
 				6DEFC18821CE3B8700F55D08 /* xps_queue.h */,
 				6DEFC18921CE3B8700F55D08 /* xps_queue.c */,
 				6DEFC19621CE520B00F55D08 /* xps_rbtree.h */,
@@ -235,9 +270,12 @@
 				6DEFC18A21CE3B8700F55D08 /* xps_queue.h in Headers */,
 				6DEFC17B21CE173700F55D08 /* xps_config.h in Headers */,
 				6DCE0D8321CF4C3900D3936C /* xps_module.h in Headers */,
+				6D1B587C21D07D4200957DD8 /* xps_event.h in Headers */,
+				6D1B587521D07D3500957DD8 /* xps_kqueue.h in Headers */,
 				6DEFC17421CE0B4800F55D08 /* xps_logger.h in Headers */,
 				6DEFC19221CE4F0B00F55D08 /* xps_string.h in Headers */,
 				6DEFC18221CE35C600F55D08 /* xps_malloc.h in Headers */,
+				6D1B589821D0C65500957DD8 /* xps_action.h in Headers */,
 				6DEFC17D21CE173C00F55D08 /* xps_sys.h in Headers */,
 				6DEFC19821CE520B00F55D08 /* xps_rbtree.h in Headers */,
 				6DEFC16821CE098B00F55D08 /* XPS.h in Headers */,
@@ -254,9 +292,12 @@
 				6DEFC18B21CE3B8700F55D08 /* xps_queue.h in Headers */,
 				6DEFC17C21CE173800F55D08 /* xps_config.h in Headers */,
 				6DCE0D8421CF4C3900D3936C /* xps_module.h in Headers */,
+				6D1B587D21D07D4200957DD8 /* xps_event.h in Headers */,
+				6D1B587621D07D3500957DD8 /* xps_kqueue.h in Headers */,
 				6DEFC17521CE0B4800F55D08 /* xps_logger.h in Headers */,
 				6DEFC19321CE4F0C00F55D08 /* xps_string.h in Headers */,
 				6DEFC18321CE35C600F55D08 /* xps_malloc.h in Headers */,
+				6D1B589921D0C65500957DD8 /* xps_action.h in Headers */,
 				6DEFC17E21CE173D00F55D08 /* xps_sys.h in Headers */,
 				6DEFC19921CE520B00F55D08 /* xps_rbtree.h in Headers */,
 				6DEFC16921CE098C00F55D08 /* XPS.h in Headers */,
@@ -384,14 +425,17 @@
 			files = (
 				6DEFC16D21CE09F600F55D08 /* xps_core.c in Sources */,
 				6D4E185821CE016800B4625B /* main.c in Sources */,
+				6D1B589A21D0C65500957DD8 /* xps_action.c in Sources */,
 				6DEFC18121CE1AB900F55D08 /* xps_malloc.c in Sources */,
 				6DEFC19A21CE520B00F55D08 /* xps_rbtree.c in Sources */,
 				6D4E185C21CE01E400B4625B /* libxps.c in Sources */,
 				6DCE0D8521CF4C3900D3936C /* xps_module.c in Sources */,
 				6DCE0D7B21CF4C1400D3936C /* xps_palloc.c in Sources */,
 				6DEFC17821CE169B00F55D08 /* xps_sys.c in Sources */,
+				6D1B587E21D07D4200957DD8 /* xps_event.c in Sources */,
 				6DEFC19121CE4F0400F55D08 /* xps_string.c in Sources */,
 				6DEFC18C21CE3B8700F55D08 /* xps_queue.c in Sources */,
+				6D1B587721D07D3500957DD8 /* xps_kqueue.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -400,6 +444,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6DEFC16E21CE0A2500F55D08 /* xps_core.c in Sources */,
+				6D1B589B21D0C65500957DD8 /* xps_action.c in Sources */,
 				6DCE0D8621CF4C3900D3936C /* xps_module.c in Sources */,
 				6D51A54821CCF41E00545662 /* libxps.c in Sources */,
 				6DCE0D7C21CF4C1400D3936C /* xps_palloc.c in Sources */,
@@ -407,7 +452,9 @@
 				6DEFC17921CE172D00F55D08 /* xps_sys.c in Sources */,
 				6DEFC18421CE35C800F55D08 /* xps_malloc.c in Sources */,
 				6DEFC19B21CE520B00F55D08 /* xps_rbtree.c in Sources */,
+				6D1B587F21D07D4200957DD8 /* xps_event.c in Sources */,
 				6DEFC18D21CE3B8700F55D08 /* xps_queue.c in Sources */,
+				6D1B587821D07D3500957DD8 /* xps_kqueue.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -416,6 +463,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6DEFC16F21CE0A2500F55D08 /* xps_core.c in Sources */,
+				6D1B589C21D0C65500957DD8 /* xps_action.c in Sources */,
 				6DCE0D8721CF4C3900D3936C /* xps_module.c in Sources */,
 				6D51A54B21CCF42900545662 /* libxps.c in Sources */,
 				6DCE0D7D21CF4C1400D3936C /* xps_palloc.c in Sources */,
@@ -423,7 +471,9 @@
 				6DEFC17A21CE172E00F55D08 /* xps_sys.c in Sources */,
 				6DEFC18521CE35C900F55D08 /* xps_malloc.c in Sources */,
 				6DEFC19C21CE520B00F55D08 /* xps_rbtree.c in Sources */,
+				6D1B588021D07D4200957DD8 /* xps_event.c in Sources */,
 				6DEFC18E21CE3B8700F55D08 /* xps_queue.c in Sources */,
+				6D1B587921D07D3500957DD8 /* xps_kqueue.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

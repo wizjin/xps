@@ -17,6 +17,7 @@
 
 // Const Macro
 #define INVALID_SOCKET                  -1
+#define XPS_DONE                        1
 #define XPS_OK                          0
 #define XPS_ERROR                       -1
 #define XPS_DECLINED                    -2
