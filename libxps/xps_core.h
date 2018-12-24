@@ -13,14 +13,15 @@
 #include "xps_action.h"
 #include "xps_event.h"
 
-typedef struct xps_core             xps_core_t;
+typedef struct xps_core     xps_core_t;
+typedef struct xps_modules  xps_modules_t;
 
 struct xps_core {
     xps_pool_t          *pool;
     xps_event_actions_t *evacts;
-    xps_queue_t         modules;
     xps_action_t        workers;
     xps_event_notify_t  *notify;
+    xps_modules_t       modules;
     pthread_t           worker;
 
     unsigned            inited:1;

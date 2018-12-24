@@ -37,21 +37,29 @@ XPS_INLINE int xps_kqueue_worker(void *ctx) {
     for (int i = 0; i < nevents; i++) {
         struct kevent *e = kq->events + i;
         switch (e->filter) {
-            case EVFILT_TIMER:
-            {
-                xps_event_timer_t *timer = (xps_event_timer_t *)(e->udata);
-                if (timer->handler && timer->handler(timer) == XPS_DONE) {
-                    return XPS_DONE;
+            case EVFILT_READ:
+                if (e->udata != NULL) {
+                    xps_event_t *ev = (xps_event_t *)(e->udata);
+                    if (ev->handler != NULL) {
+                        ev->handler(ev);
+                    }
                 }
-            }
+                break;
+            case EVFILT_TIMER:
+                if (e->udata != NULL) {
+                    xps_event_timer_t *timer = (xps_event_timer_t *)(e->udata);
+                    if (timer->handler != NULL && timer->handler(timer) == XPS_DONE) {
+                        return XPS_DONE;
+                    }
+                }
                 break;
             case EVFILT_USER:
-            {
-                xps_event_notify_t *notify = (xps_event_notify_t *)(e->udata);
-                if (notify->handler && notify->handler(notify) == XPS_DONE) {
-                    return XPS_DONE;
+                if (e->udata != NULL) {
+                    xps_event_notify_t *notify = (xps_event_notify_t *)(e->udata);
+                    if (notify->handler != NULL && notify->handler(notify) == XPS_DONE) {
+                        return XPS_DONE;
+                    }
                 }
-            }
                 break;
         }
     }

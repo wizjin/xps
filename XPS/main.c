@@ -15,7 +15,7 @@ int main(int argc, const char * argv[]) {
     xps_core_t *core = xps_core_create();
     if (core != NULL) {
         if (xps_core_start(core) == XPS_OK) {
-            sleep(10);
+            getc(stdin);
             xps_core_stop(core);
         }
         xps_core_destory(core);

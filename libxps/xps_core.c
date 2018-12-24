@@ -30,7 +30,8 @@ XPS_API xps_core_t *xps_core_create(void) {
         if (core != NULL) {
             core->pool = xps_pool_create(XPS_POOL_DEFAULT_SIZE);
             if (core->pool != NULL) {
-                if (xps_module_load(core, XPS_MODULE_LIST NULL) == XPS_OK) {
+                xps_modules_init(&core->modules);
+                if (xps_modules_load(core, XPS_MODULE_LIST NULL) == XPS_OK) {
                     if (core->evacts == NULL) {
                         log_error("can't found event module.");
                     } else {
