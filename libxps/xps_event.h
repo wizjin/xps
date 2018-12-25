@@ -53,6 +53,7 @@ struct xps_event_actions {
     void (*add)(xps_event_actions_t *acts, xps_event_t *ev, int fd, unsigned flags);
     void (*set)(xps_event_actions_t *acts, xps_event_t *ev, unsigned flags);
     void (*del)(xps_event_actions_t *acts, xps_event_t *ev);
+    void (*flush)(xps_event_actions_t *acts);
     xps_event_timer_t *(*add_timer)(xps_event_actions_t *acts, xps_event_time_handler_pt handler, unsigned interval, void *ptr);
     xps_event_notify_t *(*add_notify)(xps_event_actions_t *acts, xps_event_notify_handler_pt handler);
 };

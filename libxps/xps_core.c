@@ -14,6 +14,7 @@
 #define XPS_MODULE_LIST             \
     XPS_MODULE_IMPORT(kqueue)       \
     XPS_MODULE_IMPORT(inet)         \
+    XPS_MODULE_IMPORT(cache)        \
     XPS_MODULE_IMPORT(http)         \
     XPS_MODULE_IMPORT(socks)        \
 

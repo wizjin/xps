@@ -41,7 +41,7 @@ XPS_INLINE int xps_kqueue_worker(void *ctx) {
             case EVFILT_WRITE:
                 if (e->udata != NULL) {
                     xps_event_t *ev = (xps_event_t *)(e->udata);
-                    if (ev->handler != NULL) {
+                    if (ev->closed == 0 && ev->handler != NULL) {
                         ev->available = (unsigned)e->data;
                         if (e->fflags & EV_EOF) ev->eof = 1;
                         ev->handler(ev);
@@ -80,6 +80,12 @@ XPS_INLINE void xps_kqueue_push_event(xps_kqueue_t *kq, xps_event_t *ev, unsigne
     e->flags    = flags;
     e->data     = 0;
     e->udata    = ev;
+}
+
+XPS_INLINE void xps_kqueue_flush_event(xps_event_actions_t *acts) {
+    xps_kqueue_t *kq = (xps_kqueue_t *)acts->ctx;
+    kevent(kq->fd, kq->changes, kq->nchanges, NULL, 0, NULL);
+    kq->nchanges = 0;
 }
 
 XPS_INLINE void xps_kqueue_add_event(xps_event_actions_t *acts, xps_event_t *ev, int fd, unsigned flags) {
@@ -204,6 +210,7 @@ XPS_INLINE int xps_kqueue_load(xps_core_t *core) {
             kq->actions.add         = xps_kqueue_add_event;
             kq->actions.set         = xps_kqueue_set_event;
             kq->actions.del         = xps_kqueue_del_event;
+            kq->actions.flush       = xps_kqueue_flush_event;
             kq->actions.add_notify  = xps_kqueue_add_notify;
             kq->actions.add_timer   = xps_kqueue_add_timer;
             kq->core                = core;

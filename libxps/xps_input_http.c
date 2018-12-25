@@ -10,7 +10,7 @@
 #include "xps_connection.h"
 
 XPS_INLINE xps_connection_t *xps_input_http_accept(xps_core_t *core, int fd) {
-    xps_connection_t *c = xps_connection_alloc(core->inet, fd);
+    xps_connection_t *c = xps_connection_create(core->inet, fd);
     if (c != NULL) {
         xps_connection_close(c);
     }
@@ -20,4 +20,3 @@ XPS_INLINE xps_connection_t *xps_input_http_accept(xps_core_t *core, int fd) {
 XPS_MODULE_INPUT_TCP_DECL(http)
     .accept = xps_input_http_accept,
 XPS_MODULE_END()
-

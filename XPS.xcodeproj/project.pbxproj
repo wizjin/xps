@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6D0C352D21D259DC00C0A49C /* xps_buffer.h in Headers */ = {isa = PBXBuildFile; fileRef = 6D0C352B21D259DC00C0A49C /* xps_buffer.h */; };
+		6D0C352E21D259DC00C0A49C /* xps_buffer.h in Headers */ = {isa = PBXBuildFile; fileRef = 6D0C352B21D259DC00C0A49C /* xps_buffer.h */; };
+		6D0C352F21D259DC00C0A49C /* xps_buffer.c in Sources */ = {isa = PBXBuildFile; fileRef = 6D0C352C21D259DC00C0A49C /* xps_buffer.c */; };
+		6D0C353021D259DC00C0A49C /* xps_buffer.c in Sources */ = {isa = PBXBuildFile; fileRef = 6D0C352C21D259DC00C0A49C /* xps_buffer.c */; };
+		6D0C353121D259DC00C0A49C /* xps_buffer.c in Sources */ = {isa = PBXBuildFile; fileRef = 6D0C352C21D259DC00C0A49C /* xps_buffer.c */; };
 		6D1B587721D07D3500957DD8 /* xps_kqueue.c in Sources */ = {isa = PBXBuildFile; fileRef = 6D1B587421D07D3500957DD8 /* xps_kqueue.c */; };
 		6D1B587821D07D3500957DD8 /* xps_kqueue.c in Sources */ = {isa = PBXBuildFile; fileRef = 6D1B587421D07D3500957DD8 /* xps_kqueue.c */; };
 		6D1B587921D07D3500957DD8 /* xps_kqueue.c in Sources */ = {isa = PBXBuildFile; fileRef = 6D1B587421D07D3500957DD8 /* xps_kqueue.c */; };
@@ -120,6 +125,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		6D0C352B21D259DC00C0A49C /* xps_buffer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = xps_buffer.h; sourceTree = "<group>"; };
+		6D0C352C21D259DC00C0A49C /* xps_buffer.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = xps_buffer.c; sourceTree = "<group>"; };
 		6D1B587421D07D3500957DD8 /* xps_kqueue.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = xps_kqueue.c; sourceTree = "<group>"; };
 		6D1B587A21D07D4200957DD8 /* xps_event.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = xps_event.h; sourceTree = "<group>"; };
 		6D1B589621D0C65500957DD8 /* xps_action.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = xps_action.h; sourceTree = "<group>"; };
@@ -228,6 +235,8 @@
 			children = (
 				6D1FBA6A21D200220017D2A1 /* xps_inet.h */,
 				6D1FBA6B21D200220017D2A1 /* xps_inet.c */,
+				6D0C352B21D259DC00C0A49C /* xps_buffer.h */,
+				6D0C352C21D259DC00C0A49C /* xps_buffer.c */,
 				6D1B58B621D117CE00957DD8 /* xps_connection.h */,
 				6D1B58B721D117CE00957DD8 /* xps_connection.c */,
 			);
@@ -363,6 +372,7 @@
 				6D1B58A921D1113900957DD8 /* xps_input.h in Headers */,
 				6D1FBA6C21D200220017D2A1 /* xps_inet.h in Headers */,
 				6DEFC16821CE098B00F55D08 /* XPS.h in Headers */,
+				6D0C352D21D259DC00C0A49C /* xps_buffer.h in Headers */,
 				6DCE0D7E21CF4C1400D3936C /* xps_palloc.h in Headers */,
 				6DEFC17121CE0A2900F55D08 /* xps_core.h in Headers */,
 				6D51A54921CCF41E00545662 /* libxps.h in Headers */,
@@ -390,6 +400,7 @@
 				6D1B58AA21D1113900957DD8 /* xps_input.h in Headers */,
 				6D1FBA6D21D200220017D2A1 /* xps_inet.h in Headers */,
 				6DEFC16921CE098C00F55D08 /* XPS.h in Headers */,
+				6D0C352E21D259DC00C0A49C /* xps_buffer.h in Headers */,
 				6DCE0D7F21CF4C1400D3936C /* xps_palloc.h in Headers */,
 				6DEFC17021CE0A2800F55D08 /* xps_core.h in Headers */,
 				6D51A54A21CCF42700545662 /* libxps.h in Headers */,
@@ -519,6 +530,7 @@
 				6DEFC18121CE1AB900F55D08 /* xps_malloc.c in Sources */,
 				6D1FBA5921D1CC140017D2A1 /* xps_output.c in Sources */,
 				6DEFC19A21CE520B00F55D08 /* xps_rbtree.c in Sources */,
+				6D0C352F21D259DC00C0A49C /* xps_buffer.c in Sources */,
 				6D1FBA5521D1CC0A0017D2A1 /* xps_input.c in Sources */,
 				6D4E185C21CE01E400B4625B /* libxps.c in Sources */,
 				6D1FBA7221D214690017D2A1 /* xps_input_http.c in Sources */,
@@ -548,6 +560,7 @@
 				6D1B58BB21D117CE00957DD8 /* xps_connection.c in Sources */,
 				6D1FBA6121D1CF380017D2A1 /* xps_chain.c in Sources */,
 				6DEFC19421CE4F0F00F55D08 /* xps_string.c in Sources */,
+				6D0C353021D259DC00C0A49C /* xps_buffer.c in Sources */,
 				6D1FBA5A21D1CC140017D2A1 /* xps_output.c in Sources */,
 				6D1FBA6821D1FC780017D2A1 /* xps_input_tcp.c in Sources */,
 				6D1FBA5221D1C7740017D2A1 /* xps_input_socks.c in Sources */,
@@ -574,6 +587,7 @@
 				6D1B58BC21D117CE00957DD8 /* xps_connection.c in Sources */,
 				6D1FBA6221D1CF380017D2A1 /* xps_chain.c in Sources */,
 				6DEFC19521CE4F0F00F55D08 /* xps_string.c in Sources */,
+				6D0C353121D259DC00C0A49C /* xps_buffer.c in Sources */,
 				6D1FBA5B21D1CC140017D2A1 /* xps_output.c in Sources */,
 				6D1FBA6921D1FC780017D2A1 /* xps_input_tcp.c in Sources */,
 				6D1FBA5321D1C7740017D2A1 /* xps_input_socks.c in Sources */,

@@ -33,16 +33,21 @@
 #endif
 
 #ifndef XPS_MAX_CONNECTION_COUNT
-#   define XPS_MAX_CONNECTION_COUNT     128
+#   define XPS_MAX_CONNECTION_COUNT     256
 #endif
 
 #ifndef XPS_MAX_ACCEPT_COUNT
 #   define XPS_MAX_ACCEPT_COUNT         4
 #endif
 
+#ifndef XPS_MAX_BUFFER_COUNT
+#   define XPS_MAX_BUFFER_COUNT         XPS_MAX_CONNECTION_COUNT
+#endif
+
 #ifndef XPS_TCP_FASTOPEN
 #   define XPS_TCP_FASTOPEN             1
 #endif
+
 
 // Misc Macro
 #define xps_countof(x)                  (sizeof(x)/sizeof(x[0]))
