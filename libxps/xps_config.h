@@ -17,11 +17,12 @@
 
 // Const Macro
 #define INVALID_SOCKET                  -1
+#define XPS_DONE                        1
 #define XPS_OK                          0
 #define XPS_ERROR                       -1
 #define XPS_DECLINED                    -2
 
-#define XPS_ALIGNMENT                   sizeof(unsigned long)  // must geater 4
+#define XPS_ALIGNMENT                   sizeof(unsigned long)
 
 #ifndef XPS_USED_MEMORY_MAX
 #   define XPS_USED_MEMORY_MAX          (8 * 1024 * 1024)

@@ -53,5 +53,7 @@ XPS_API void *xps_pcalloc(xps_pool_t *pool, size_t size);
 XPS_API int xps_pfree(xps_pool_t *pool, void *p);
 XPS_API xps_pool_cleanup_t *xps_pool_cleanup_add(xps_pool_t *p, size_t size);
 
+#define xps_pool_get_free_size(pool)    ((pool)->d.end - (pool)->d.last)
+
 
 #endif /* __XPS_PALLOC_H__ */
