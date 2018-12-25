@@ -153,6 +153,7 @@ XPS_INLINE int xps_inet_load(xps_core_t *core) {
         xps_queue_init(&inet->closed);
         xps_queue_init(&inet->freed);
         if (xps_core_add_worker(core, xps_inet_worker, inet) == XPS_OK) {
+            log_info("%ld", sizeof(xps_inet_addr_t));
             return XPS_OK;
         }
     }

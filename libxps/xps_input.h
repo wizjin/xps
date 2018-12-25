@@ -37,4 +37,5 @@ XPS_API int xps_input_module_active(xps_core_t *core, const char *name, const ch
 XPS_API int xps_input_modules_open(xps_core_t *core);
 XPS_API void xps_input_modules_close(xps_core_t *core);
 
+
 #endif /* __XPS_INPUT_H__ */

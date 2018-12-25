@@ -17,6 +17,8 @@
     XPS_MODULE_IMPORT(cache)        \
     XPS_MODULE_IMPORT(http)         \
     XPS_MODULE_IMPORT(socks)        \
+    XPS_MODULE_IMPORT(bypass)       \
+    XPS_MODULE_IMPORT(router)       \
 
 #define XPS_MODULE_IMPORT(_name)    XPS_EXTERN xps_module_t *XPS_MODULE_NAME(_name);
 XPS_MODULE_LIST
@@ -42,6 +44,8 @@ XPS_API xps_core_t *xps_core_create(void) {
                         log_error("can't found event module.");
                     } else if (core->inet == NULL) {
                         log_error("can't found inet module.");
+                    } else if (core->router == NULL) {
+                        log_error("can't found router module.");
                     } else {
                         core->notify = core->evacts->add_notify(core->evacts, xps_core_exit_handler);
                         if (core->notify != NULL) {

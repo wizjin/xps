@@ -11,6 +11,19 @@
 #include "xps_config.h"
 #include <unistd.h>
 #include <netinet/in.h>
+#include "xps_string.h"
+
+#define XPS_ADDR_TYPE_IP4                   1
+#define XPS_ADDR_TYPE_HOSTNAME              3
+
+typedef struct xps_inet_addr xps_inet_addr_t;
+
+struct xps_inet_addr {
+    unsigned    type;
+    xps_str_t   *host;
+    in_addr_t   addr;
+    in_port_t   port;
+};
 
 XPS_API void xps_tcp_enable_async(int fd);
 XPS_API void xps_tcp_enable_fastopen(int fd);

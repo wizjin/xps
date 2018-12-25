@@ -27,7 +27,7 @@ struct xps_module {
 };
 
 struct xps_modules {
-    xps_queue_t         queue;
+    xps_queue_t     queue;
 };
 
 XPS_API void xps_modules_init(xps_modules_t *modules);
@@ -45,7 +45,9 @@ XPS_API xps_module_t *xps_modules_find(xps_core_t *core, const char *name);
 // Module Types
 #define XPS_MODULE_TYPE_SYS                 1
 #define XPS_MODULE_TYPE_EVENT               2
-#define XPS_MODULE_TYPE_INPUT               3
+#define XPS_MODULE_TYPE_ROUTER              3
+#define XPS_MODULE_TYPE_INPUT               4
+#define XPS_MODULE_TYPE_OUTPUT              5
 
 #define XPS_MODULE_SYS_DECL(_name)          XPS_MODULE_DECL(_name, xps_module_t, XPS_MODULE_TYPE_SYS)
 
