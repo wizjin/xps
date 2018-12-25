@@ -10,6 +10,8 @@
 
 #include "xps_config.h"
 #include <pthread.h>
+#include "xps_logger.h"
+#include "xps_palloc.h"
 #include "xps_action.h"
 #include "xps_event.h"
 

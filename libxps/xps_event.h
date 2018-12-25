@@ -11,18 +11,26 @@
 #include "xps_config.h"
 #include "xps_module.h"
 
+#define XPS_EVFLG_READ              0x01
+#define XPS_EVFLG_WRITE             0x02
+#define XPS_EVFLG_ENABLE            0x04
+#define XPS_EVFLG_DISABLE           0x08
+
 typedef struct xps_event            xps_event_t;
 typedef struct xps_event_timer      xps_event_timer_t;
 typedef struct xps_event_notify     xps_event_notify_t;
 typedef struct xps_event_actions    xps_event_actions_t;
-typedef int (*xps_event_handler_pt)(xps_event_t *event);
+typedef void (*xps_event_handler_pt)(xps_event_t *event, xps_core_t *core);
 typedef int (*xps_event_time_handler_pt)(xps_event_timer_t *timer);
 typedef int (*xps_event_notify_handler_pt)(xps_event_notify_t *notify);
 
 struct xps_event {
-    void                    *data;
     xps_event_handler_pt    handler;
-    unsigned                nodelay:1;
+    int                     fd;
+    uint16_t                event;
+    unsigned                available;
+    unsigned                eof:1;
+    unsigned                closed:1;
 };
 
 struct xps_event_timer {
@@ -42,6 +50,8 @@ struct xps_event_notify {
 
 struct xps_event_actions {
     void *ctx;
+    void (*add)(xps_event_actions_t *acts, xps_event_t *ev, int fd, unsigned flags);
+    void (*del)(xps_event_actions_t *acts, xps_event_t *ev);
     xps_event_timer_t *(*add_timer)(xps_event_actions_t *acts, xps_event_time_handler_pt handler, unsigned interval, void *ptr);
     xps_event_notify_t *(*add_notify)(xps_event_actions_t *acts, xps_event_notify_handler_pt handler);
 };
