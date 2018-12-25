@@ -10,13 +10,13 @@
 #include <netinet/tcp.h>
 #include "xps_logger.h"
 
-XPS_API void xps_tcp_disable_block(int fd) {
+XPS_API void xps_tcp_enable_async(int fd) {
     fcntl(fd, F_SETFL, fcntl(fd, F_GETFL)|O_NONBLOCK);
 }
 
 static int xps_tcp_fastopen_is_enable = XPS_TCP_FASTOPEN;
 
-XPS_API void xps_tcp_fastopen_enable(int fd) {
+XPS_API void xps_tcp_enable_fastopen(int fd) {
     if (xps_tcp_fastopen_is_enable) {
         int opt = 1;
         if (setsockopt(fd, IPPROTO_TCP, TCP_FASTOPEN, &opt, sizeof(opt)) != 0) {

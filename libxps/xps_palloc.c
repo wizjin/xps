@@ -83,7 +83,7 @@ XPS_PRIVATE void xps_pool_fini(void) {
     int i = 0;
     while (!xps_queue_empty(&xps_pool_used_queue)) {
         xps_queue_t *q = xps_queue_head(&xps_pool_used_queue);
-        xps_pool_destroy(xps_queue_data(q, xps_pool_t, queue));
+        xps_pool_destroy(xps_structof(q, xps_pool_t, queue));
         i++;
     }
     if (i > 0) log_warn("find leaked pool: %d", i);

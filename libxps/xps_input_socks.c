@@ -7,8 +7,13 @@
 
 #include "xps_input_tcp.h"
 #include "xps_core.h"
+#include "xps_connection.h"
 
 XPS_INLINE xps_connection_t *xps_input_socks_accept(xps_core_t *core, int fd) {
+    xps_connection_t *c = xps_connection_alloc(core->inet, fd);
+    if (c != NULL) {
+        xps_connection_close(c);
+    }
     return NULL;
 }
 

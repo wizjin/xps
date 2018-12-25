@@ -13,6 +13,7 @@
 
 #define XPS_MODULE_LIST             \
     XPS_MODULE_IMPORT(kqueue)       \
+    XPS_MODULE_IMPORT(inet)         \
     XPS_MODULE_IMPORT(http)         \
     XPS_MODULE_IMPORT(socks)        \
 
@@ -38,6 +39,8 @@ XPS_API xps_core_t *xps_core_create(void) {
                 if (xps_modules_load(core, XPS_MODULE_LIST NULL) == XPS_OK) {
                     if (core->evacts == NULL) {
                         log_error("can't found event module.");
+                    } else if (core->inet == NULL) {
+                        log_error("can't found inet module.");
                     } else {
                         core->notify = core->evacts->add_notify(core->evacts, xps_core_exit_handler);
                         if (core->notify != NULL) {

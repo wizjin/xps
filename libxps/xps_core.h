@@ -16,10 +16,12 @@
 #include "xps_event.h"
 
 typedef struct xps_core     xps_core_t;
+typedef struct xps_inet     xps_inet_t;
 typedef struct xps_modules  xps_modules_t;
 
 struct xps_core {
     xps_pool_t          *pool;
+    xps_inet_t          *inet;
     xps_event_actions_t *evacts;
     xps_chain_t         inputs;
     xps_chain_t         workers;

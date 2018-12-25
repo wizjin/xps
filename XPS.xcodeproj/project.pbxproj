@@ -26,11 +26,6 @@
 		6D1B58BA21D117CE00957DD8 /* xps_connection.c in Sources */ = {isa = PBXBuildFile; fileRef = 6D1B58B721D117CE00957DD8 /* xps_connection.c */; };
 		6D1B58BB21D117CE00957DD8 /* xps_connection.c in Sources */ = {isa = PBXBuildFile; fileRef = 6D1B58B721D117CE00957DD8 /* xps_connection.c */; };
 		6D1B58BC21D117CE00957DD8 /* xps_connection.c in Sources */ = {isa = PBXBuildFile; fileRef = 6D1B58B721D117CE00957DD8 /* xps_connection.c */; };
-		6D1B58BF21D117F800957DD8 /* xps_listen.h in Headers */ = {isa = PBXBuildFile; fileRef = 6D1B58BD21D117F800957DD8 /* xps_listen.h */; };
-		6D1B58C021D117F800957DD8 /* xps_listen.h in Headers */ = {isa = PBXBuildFile; fileRef = 6D1B58BD21D117F800957DD8 /* xps_listen.h */; };
-		6D1B58C121D117F800957DD8 /* xps_listen.c in Sources */ = {isa = PBXBuildFile; fileRef = 6D1B58BE21D117F800957DD8 /* xps_listen.c */; };
-		6D1B58C221D117F800957DD8 /* xps_listen.c in Sources */ = {isa = PBXBuildFile; fileRef = 6D1B58BE21D117F800957DD8 /* xps_listen.c */; };
-		6D1B58C321D117F800957DD8 /* xps_listen.c in Sources */ = {isa = PBXBuildFile; fileRef = 6D1B58BE21D117F800957DD8 /* xps_listen.c */; };
 		6D1FBA5121D1C7740017D2A1 /* xps_input_socks.c in Sources */ = {isa = PBXBuildFile; fileRef = 6D1FBA4E21D1C7740017D2A1 /* xps_input_socks.c */; };
 		6D1FBA5221D1C7740017D2A1 /* xps_input_socks.c in Sources */ = {isa = PBXBuildFile; fileRef = 6D1FBA4E21D1C7740017D2A1 /* xps_input_socks.c */; };
 		6D1FBA5321D1C7740017D2A1 /* xps_input_socks.c in Sources */ = {isa = PBXBuildFile; fileRef = 6D1FBA4E21D1C7740017D2A1 /* xps_input_socks.c */; };
@@ -133,8 +128,6 @@
 		6D1B58AE21D1116A00957DD8 /* xps_output.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = xps_output.h; sourceTree = "<group>"; };
 		6D1B58B621D117CE00957DD8 /* xps_connection.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = xps_connection.h; sourceTree = "<group>"; };
 		6D1B58B721D117CE00957DD8 /* xps_connection.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = xps_connection.c; sourceTree = "<group>"; };
-		6D1B58BD21D117F800957DD8 /* xps_listen.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = xps_listen.h; sourceTree = "<group>"; };
-		6D1B58BE21D117F800957DD8 /* xps_listen.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = xps_listen.c; sourceTree = "<group>"; };
 		6D1FBA4E21D1C7740017D2A1 /* xps_input_socks.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = xps_input_socks.c; sourceTree = "<group>"; };
 		6D1FBA5421D1CC0A0017D2A1 /* xps_input.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = xps_input.c; sourceTree = "<group>"; };
 		6D1FBA5821D1CC140017D2A1 /* xps_output.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = xps_output.c; sourceTree = "<group>"; };
@@ -233,8 +226,8 @@
 		6D1B58B521D1141F00957DD8 /* inet */ = {
 			isa = PBXGroup;
 			children = (
-				6D1B58BD21D117F800957DD8 /* xps_listen.h */,
-				6D1B58BE21D117F800957DD8 /* xps_listen.c */,
+				6D1FBA6A21D200220017D2A1 /* xps_inet.h */,
+				6D1FBA6B21D200220017D2A1 /* xps_inet.c */,
 				6D1B58B621D117CE00957DD8 /* xps_connection.h */,
 				6D1B58B721D117CE00957DD8 /* xps_connection.c */,
 			);
@@ -332,8 +325,6 @@
 			children = (
 				6DEFC17221CE0A4A00F55D08 /* xps_config.h */,
 				6DEFC17321CE0B4800F55D08 /* xps_logger.h */,
-				6D1FBA6A21D200220017D2A1 /* xps_inet.h */,
-				6D1FBA6B21D200220017D2A1 /* xps_inet.c */,
 				6DEFC18F21CE4F0400F55D08 /* xps_string.h */,
 				6DEFC19021CE4F0400F55D08 /* xps_string.c */,
 				6D1FBA5C21D1CF380017D2A1 /* xps_chain.h */,
@@ -360,7 +351,6 @@
 				6DEFC17B21CE173700F55D08 /* xps_config.h in Headers */,
 				6DCE0D8321CF4C3900D3936C /* xps_module.h in Headers */,
 				6D1B587C21D07D4200957DD8 /* xps_event.h in Headers */,
-				6D1B58BF21D117F800957DD8 /* xps_listen.h in Headers */,
 				6D1B58B021D1116A00957DD8 /* xps_output.h in Headers */,
 				6DEFC17421CE0B4800F55D08 /* xps_logger.h in Headers */,
 				6DEFC19221CE4F0B00F55D08 /* xps_string.h in Headers */,
@@ -388,7 +378,6 @@
 				6DEFC17C21CE173800F55D08 /* xps_config.h in Headers */,
 				6DCE0D8421CF4C3900D3936C /* xps_module.h in Headers */,
 				6D1B587D21D07D4200957DD8 /* xps_event.h in Headers */,
-				6D1B58C021D117F800957DD8 /* xps_listen.h in Headers */,
 				6D1B58B121D1116A00957DD8 /* xps_output.h in Headers */,
 				6DEFC17521CE0B4800F55D08 /* xps_logger.h in Headers */,
 				6DEFC19321CE4F0C00F55D08 /* xps_string.h in Headers */,
@@ -528,7 +517,6 @@
 				6D1FBA6721D1FC780017D2A1 /* xps_input_tcp.c in Sources */,
 				6D1B589A21D0C65500957DD8 /* xps_action.c in Sources */,
 				6DEFC18121CE1AB900F55D08 /* xps_malloc.c in Sources */,
-				6D1B58C121D117F800957DD8 /* xps_listen.c in Sources */,
 				6D1FBA5921D1CC140017D2A1 /* xps_output.c in Sources */,
 				6DEFC19A21CE520B00F55D08 /* xps_rbtree.c in Sources */,
 				6D1FBA5521D1CC0A0017D2A1 /* xps_input.c in Sources */,
@@ -557,7 +545,6 @@
 				6DCE0D8621CF4C3900D3936C /* xps_module.c in Sources */,
 				6D51A54821CCF41E00545662 /* libxps.c in Sources */,
 				6DCE0D7C21CF4C1400D3936C /* xps_palloc.c in Sources */,
-				6D1B58C221D117F800957DD8 /* xps_listen.c in Sources */,
 				6D1B58BB21D117CE00957DD8 /* xps_connection.c in Sources */,
 				6D1FBA6121D1CF380017D2A1 /* xps_chain.c in Sources */,
 				6DEFC19421CE4F0F00F55D08 /* xps_string.c in Sources */,
@@ -584,7 +571,6 @@
 				6DCE0D8721CF4C3900D3936C /* xps_module.c in Sources */,
 				6D51A54B21CCF42900545662 /* libxps.c in Sources */,
 				6DCE0D7D21CF4C1400D3936C /* xps_palloc.c in Sources */,
-				6D1B58C321D117F800957DD8 /* xps_listen.c in Sources */,
 				6D1B58BC21D117CE00957DD8 /* xps_connection.c in Sources */,
 				6D1FBA6221D1CF380017D2A1 /* xps_chain.c in Sources */,
 				6DEFC19521CE4F0F00F55D08 /* xps_string.c in Sources */,

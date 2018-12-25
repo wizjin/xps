@@ -32,6 +32,10 @@
 #   define XPS_POOL_DEFAULT_SIZE        (16 * 1024)
 #endif
 
+#ifndef XPS_MAX_CONNECTION_COUNT
+#   define XPS_MAX_CONNECTION_COUNT     128
+#endif
+
 #ifndef XPS_MAX_ACCEPT_COUNT
 #   define XPS_MAX_ACCEPT_COUNT         4
 #endif

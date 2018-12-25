@@ -37,7 +37,7 @@ XPS_API int xps_input_modules_open(xps_core_t *core) {
 XPS_API void xps_input_modules_close(xps_core_t *core) {
     for (xps_chain_node_t *p = xps_chain_head(&core->inputs); p != NULL; p = xps_chain_next(p)) {
         xps_input_t *input = xps_structof(p, xps_input_t, link);
-        if (input->close != NULL) input->close(input, core);
+        if (input->close != NULL) input->close(input);
         input->closed = 1;
     }
 }

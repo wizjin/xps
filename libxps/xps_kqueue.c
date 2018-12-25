@@ -34,7 +34,6 @@ XPS_INLINE int xps_kqueue_worker(void *ctx) {
         return XPS_ERROR;
     }
     kq->nchanges = 0;
-    xps_core_t *core = kq->core;
     for (int i = 0; i < nevents; i++) {
         struct kevent *e = kq->events + i;
         switch (e->filter) {
@@ -45,7 +44,7 @@ XPS_INLINE int xps_kqueue_worker(void *ctx) {
                     if (ev->handler != NULL) {
                         ev->available = (unsigned)e->data;
                         if (e->fflags & EV_EOF) ev->eof = 1;
-                        ev->handler(ev, core);
+                        ev->handler(ev);
                     }
                 }
                 break;
@@ -95,10 +94,15 @@ XPS_INLINE void xps_kqueue_add_event(xps_event_actions_t *acts, xps_event_t *ev,
 XPS_INLINE void xps_kqueue_del_event(xps_event_actions_t *acts, xps_event_t *ev) {
     if (ev->closed == 0) {
         xps_kqueue_push_event((xps_kqueue_t *)acts->ctx, ev, EV_DELETE);
+        ev->fd          = INVALID_SOCKET;
         ev->available   = 0;
         ev->eof         = 1;
         ev->closed      = 1;
     }
+}
+
+XPS_INLINE void xps_kqueue_set_event(xps_event_actions_t *acts, xps_event_t *ev, unsigned flags) {
+    xps_kqueue_push_event((xps_kqueue_t *)acts->ctx, ev, (flags&XPS_EVFLG_ENABLE ? EV_ENABLE : EV_DISABLE));
 }
 
 // Notify
@@ -198,6 +202,7 @@ XPS_INLINE int xps_kqueue_load(xps_core_t *core) {
             kq->max_changes         = xps_countof(kq->changes);
             kq->actions.ctx         = kq;
             kq->actions.add         = xps_kqueue_add_event;
+            kq->actions.set         = xps_kqueue_set_event;
             kq->actions.del         = xps_kqueue_del_event;
             kq->actions.add_notify  = xps_kqueue_add_notify;
             kq->actions.add_timer   = xps_kqueue_add_timer;

@@ -21,9 +21,10 @@ typedef xps_connection_t *(*xps_input_tcp_accept_pt)(xps_core_t *core, int fd);
 struct xps_input_tcp {
     xps_input_t             input;
     xps_event_t             event;
+    xps_core_t              *core;
+    xps_input_tcp_accept_pt accept;
     int                     fd;
     struct sockaddr_in      addr;
-    xps_input_tcp_accept_pt accept;
 };
 
 struct xps_input_tcp_module {

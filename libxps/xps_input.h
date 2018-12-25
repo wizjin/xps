@@ -17,10 +17,10 @@ typedef struct xps_input_module xps_input_module_t;
 typedef xps_input_t *(*xps_input_alloc_pt)(xps_core_t *core, xps_input_module_t *input, const char *option);
 
 struct xps_input {
-    xps_chain_node_t  link;
+    xps_chain_node_t    link;
     int (*open)(xps_input_t *input, xps_core_t *core);
-    void (*close)(xps_input_t *input, xps_core_t *core);
-    unsigned          closed:1;
+    void (*close)(xps_input_t *input);
+    unsigned            closed:1;
 };
 
 #define XPS_MODULE_INPUT    \
