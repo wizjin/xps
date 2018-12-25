@@ -49,7 +49,7 @@ XPS_API int xps_modules_load(xps_core_t *core, ...) {
 XPS_API xps_module_t *xps_modules_find(xps_core_t *core, const char *name) {
     xps_module_t *module = NULL;
     for (xps_queue_t *n = xps_queue_head(&core->modules.queue); n != xps_queue_sentinel(&core->modules.queue); n = xps_queue_next(n)) {
-        xps_module_node_t *m = xps_queue_data(n, xps_module_node_t, queue);
+        xps_module_node_t *m = xps_structof(n, xps_module_node_t, queue);
         if (strcmp(name, m->module->name.data) == 0) {
             return m->module;
         }

@@ -38,9 +38,12 @@ XPS_INLINE int xps_kqueue_worker(void *ctx) {
         struct kevent *e = kq->events + i;
         switch (e->filter) {
             case EVFILT_READ:
+            case EVFILT_WRITE:
                 if (e->udata != NULL) {
                     xps_event_t *ev = (xps_event_t *)(e->udata);
-                    if (ev->handler != NULL) {
+                    if (ev->closed == 0 && ev->handler != NULL) {
+                        ev->available = (unsigned)e->data;
+                        if (e->fflags & EV_EOF) ev->eof = 1;
                         ev->handler(ev);
                     }
                 }
@@ -66,22 +69,47 @@ XPS_INLINE int xps_kqueue_worker(void *ctx) {
     return XPS_OK;
 }
 
-//XPS_INLINE void xps_kqueue_set_event(xps_kqueue_t *kq, xps_event_t *ev, uint16_t flags) {
-//    uint32_t    fflags  = 0;
-//    intptr_t    data    = 0;
-//    if (ev->nodelay) {
-//        struct kevent e;
-//        EV_SET(&e, ev->ident, ev->event, flags, fflags, data, ev);
-//        kevent(kq->fd, &e, 1, NULL, 0, NULL);
-//    } else {
-//        if (kq->nchanges >= kq->max_changes) {
-//            kevent(kq->fd, kq->changes, kq->nchanges, NULL, 0, NULL);
-//            kq->nchanges = 0;
-//        }
-//        struct kevent *e = kq->changes + kq->nchanges++;
-//        EV_SET(e, ev->ident, ev->event, flags, fflags, data, ev);
-//    }
-//}
+XPS_INLINE void xps_kqueue_push_event(xps_kqueue_t *kq, xps_event_t *ev, unsigned flags) {
+    if (kq->nchanges >= kq->max_changes) {
+        kevent(kq->fd, kq->changes, kq->nchanges, NULL, 0, NULL);
+        kq->nchanges = 0;
+    }
+    struct kevent *e = kq->changes + kq->nchanges++;
+    e->ident    = ev->fd;
+    e->filter   = ev->event;
+    e->flags    = flags;
+    e->data     = 0;
+    e->udata    = ev;
+}
+
+XPS_INLINE void xps_kqueue_flush_event(xps_event_actions_t *acts) {
+    xps_kqueue_t *kq = (xps_kqueue_t *)acts->ctx;
+    kevent(kq->fd, kq->changes, kq->nchanges, NULL, 0, NULL);
+    kq->nchanges = 0;
+}
+
+XPS_INLINE void xps_kqueue_add_event(xps_event_actions_t *acts, xps_event_t *ev, int fd, unsigned flags) {
+    ev->fd          = fd;
+    ev->event       = (flags&XPS_EVFLG_READ ? EVFILT_READ : EVFILT_WRITE);
+    ev->available   = 0;
+    ev->eof         = 0;
+    ev->closed      = 0;
+    xps_kqueue_push_event((xps_kqueue_t *)acts->ctx, ev, EV_ADD|(flags&XPS_EVFLG_ENABLE ? EV_ENABLE : EV_DISABLE));
+}
+
+XPS_INLINE void xps_kqueue_del_event(xps_event_actions_t *acts, xps_event_t *ev) {
+    if (ev->closed == 0) {
+        xps_kqueue_push_event((xps_kqueue_t *)acts->ctx, ev, EV_DELETE);
+        ev->fd          = INVALID_SOCKET;
+        ev->available   = 0;
+        ev->eof         = 1;
+        ev->closed      = 1;
+    }
+}
+
+XPS_INLINE void xps_kqueue_set_event(xps_event_actions_t *acts, xps_event_t *ev, unsigned flags) {
+    xps_kqueue_push_event((xps_kqueue_t *)acts->ctx, ev, (flags&XPS_EVFLG_ENABLE ? EV_ENABLE : EV_DISABLE));
+}
 
 // Notify
 XPS_INLINE void xps_kqueue_notify_send(xps_event_notify_t *notify) {
@@ -179,6 +207,10 @@ XPS_INLINE int xps_kqueue_load(xps_core_t *core) {
             kq->max_events          = xps_countof(kq->events);
             kq->max_changes         = xps_countof(kq->changes);
             kq->actions.ctx         = kq;
+            kq->actions.add         = xps_kqueue_add_event;
+            kq->actions.set         = xps_kqueue_set_event;
+            kq->actions.del         = xps_kqueue_del_event;
+            kq->actions.flush       = xps_kqueue_flush_event;
             kq->actions.add_notify  = xps_kqueue_add_notify;
             kq->actions.add_timer   = xps_kqueue_add_timer;
             kq->core                = core;

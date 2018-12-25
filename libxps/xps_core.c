@@ -6,13 +6,16 @@
 //
 
 #include "xps_core.h"
-#include "xps_logger.h"
 #include "xps_sys.h"
 #include "xps_malloc.h"
 #include "xps_event.h"
+#include "xps_input.h"
 
 #define XPS_MODULE_LIST             \
     XPS_MODULE_IMPORT(kqueue)       \
+    XPS_MODULE_IMPORT(inet)         \
+    XPS_MODULE_IMPORT(cache)        \
+    XPS_MODULE_IMPORT(http)         \
     XPS_MODULE_IMPORT(socks)        \
 
 #define XPS_MODULE_IMPORT(_name)    XPS_EXTERN xps_module_t *XPS_MODULE_NAME(_name);
@@ -37,6 +40,8 @@ XPS_API xps_core_t *xps_core_create(void) {
                 if (xps_modules_load(core, XPS_MODULE_LIST NULL) == XPS_OK) {
                     if (core->evacts == NULL) {
                         log_error("can't found event module.");
+                    } else if (core->inet == NULL) {
+                        log_error("can't found inet module.");
                     } else {
                         core->notify = core->evacts->add_notify(core->evacts, xps_core_exit_handler);
                         if (core->notify != NULL) {
@@ -101,7 +106,9 @@ XPS_API int xps_core_start(xps_core_t *core) {
         if (core->notify != NULL) {
             core->notify->reset(core->notify);
         }
-        if (pthread_create(&core->worker, NULL, xps_core_worker, core) != 0) {
+        if (xps_input_modules_open(core) != XPS_OK) {
+            log_error("open input modules failed.");
+        } else if (pthread_create(&core->worker, NULL, xps_core_worker, core) != 0) {
             log_error("pthread_create failed: %s", strerror(errno));
         } else {
             return XPS_OK;
@@ -121,5 +128,6 @@ XPS_API void xps_core_stop(xps_core_t *core) {
             pthread_join(core->worker, NULL);
             core->worker = NULL;
         }
+        xps_input_modules_close(core);
     }
 }

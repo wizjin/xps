@@ -32,6 +32,23 @@
 #   define XPS_POOL_DEFAULT_SIZE        (16 * 1024)
 #endif
 
+#ifndef XPS_MAX_CONNECTION_COUNT
+#   define XPS_MAX_CONNECTION_COUNT     256
+#endif
+
+#ifndef XPS_MAX_ACCEPT_COUNT
+#   define XPS_MAX_ACCEPT_COUNT         4
+#endif
+
+#ifndef XPS_MAX_BUFFER_COUNT
+#   define XPS_MAX_BUFFER_COUNT         XPS_MAX_CONNECTION_COUNT
+#endif
+
+#ifndef XPS_TCP_FASTOPEN
+#   define XPS_TCP_FASTOPEN             1
+#endif
+
+
 // Misc Macro
 #define xps_countof(x)                  (sizeof(x)/sizeof(x[0]))
 #define xps_structof(x, type, member)   (type *) ((uint8_t *)(x) - offsetof(type, member))
