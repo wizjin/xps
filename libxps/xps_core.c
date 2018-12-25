@@ -13,6 +13,7 @@
 
 #define XPS_MODULE_LIST             \
     XPS_MODULE_IMPORT(kqueue)       \
+    XPS_MODULE_IMPORT(socks)        \
 
 #define XPS_MODULE_IMPORT(_name)    XPS_EXTERN xps_module_t *XPS_MODULE_NAME(_name);
 XPS_MODULE_LIST
@@ -30,6 +31,8 @@ XPS_API xps_core_t *xps_core_create(void) {
         if (core != NULL) {
             core->pool = xps_pool_create(XPS_POOL_DEFAULT_SIZE);
             if (core->pool != NULL) {
+                xps_chain_init(&core->inputs);
+                xps_chain_init(&core->workers);
                 xps_modules_init(&core->modules);
                 if (xps_modules_load(core, XPS_MODULE_LIST NULL) == XPS_OK) {
                     if (core->evacts == NULL) {
@@ -56,7 +59,7 @@ XPS_API void xps_core_destory(xps_core_t *core) {
     if (core != NULL) {
         xps_core_stop(core);
         if (core->notify != NULL) {
-            core->notify->del(core->notify);
+            core->notify->close(core->notify);
             core->notify = NULL;
         }
         if (core->inited) {

@@ -37,7 +37,7 @@ struct xps_event_notify {
     xps_event_notify_handler_pt handler;
     void (*send)(xps_event_notify_t *notify);
     void (*reset)(xps_event_notify_t *notify);
-    void (*del)(xps_event_notify_t *notify);
+    void (*close)(xps_event_notify_t *notify);
 };
 
 struct xps_event_actions {

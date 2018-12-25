@@ -9,7 +9,27 @@
 #define __XPS_INPUT_H__
 
 #include "xps_config.h"
+#include "xps_chain.h"
 #include "xps_module.h"
+
+typedef struct xps_input        xps_input_t;
+typedef struct xps_input_module xps_input_module_t;
+typedef xps_input_t *(*xps_input_alloc_pt)(xps_core_t *core, xps_input_module_t *input, const char *option);
+
+struct xps_input {
+    xps_chain_node_t  link;
+    int (*open)(xps_input_t *input, xps_core_t *core);
+    void (*close)(xps_input_t *input);
+};
+
+struct xps_input_module {
+    XPS_MODULE_COMMON
+    xps_input_alloc_pt  alloc;
+};
+
+#define XPS_MODULE_INPUT_DECL(_name)    XPS_MODULE_DECL(_name, xps_input_module_t, XPS_MODULE_TYPE_INPUT)
+
+XPS_API int xps_input_module_active(xps_core_t *core, const char *name, const char *option);
 
 
 #endif /* __XPS_INPUT_H__ */

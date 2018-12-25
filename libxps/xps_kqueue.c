@@ -5,7 +5,7 @@
 //  Created by WizJin on 2018/12/24.
 //
 
-#include "xps_kqueue.h"
+#include "xps_event.h"
 #include <unistd.h>
 #include <sys/types.h>
 #include <sys/event.h>
@@ -111,7 +111,7 @@ XPS_INLINE xps_event_notify_t *xps_kqueue_add_notify(xps_event_actions_t *acts, 
             notify->handler = handler;
             notify->send    = xps_kqueue_notify_send;
             notify->reset   = xps_kqueue_notify_reset;
-            notify->del     = xps_kqueue_notify_del;
+            notify->close   = xps_kqueue_notify_del;
 
             struct kevent e;
             EV_SET(&e, (uintptr_t)notify, EVFILT_USER, EV_ADD|EV_CLEAR, 0, 0, notify);
