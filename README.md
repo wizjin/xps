@@ -31,7 +31,7 @@ source 'https://github.com/CocoaPods/Specs.git'
 platform :ios, '10.0'
 
 target 'TargetName' do
-pod 'XPS', '~> 0.1.0'
+pod 'XPS', '~> 0.1.1'
 end
 ```
 
@@ -55,7 +55,7 @@ $ brew install carthage
 To integrate XPS into your Xcode project using Carthage, specify it in your `Cartfile`:
 
 ```ogdl
-github "wizjin/xps" ~> 0.1.0
+github "wizjin/xps" ~> 0.1.1
 ```
 
 Run `carthage` to build the framework and drag the built `XPS.framework` into your Xcode project.
