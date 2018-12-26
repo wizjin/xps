@@ -43,22 +43,26 @@ XPS_INLINE void xps_input_socks_reader(xps_event_t *ev) {
             case XPS_INPUT_SOCKS_STATUS_CONNECT:
                 if (len > 6 && pdata->data[0] == XPS_INPUT_SOCKS_VERSION) {
                     if (pdata->data[1] == XPS_INPUT_SOCKS_CMD_CONNECT) {
-                        int port = 0;
                         int atype = pdata->data[3];
                         char *hostname = (char *)pdata->data;
+                        xps_inet_addr_t addr;
                         switch (atype) {
                             case XPS_ADDR_TYPE_IP4:
-                                port = (pdata->data[8] << 8) + pdata->data[9];
+                                addr.type = XPS_ADDR_TYPE_IP4;
+                                addr.port = htons((pdata->data[8] << 8) + pdata->data[9]);
+                                addr.addr = *(in_addr_t *)(pdata->data + 4);
                                 xps_router_actions_t *router = c->inet->core->router;
-                                c->endpoint = router->connect_byip(router, *(in_addr_t *)(pdata->data + 4), port);
+                                c->endpoint = router->connect(router, &addr);
                                 break;
                             case XPS_ADDR_TYPE_HOSTNAME:
                                 if (pdata->data[4] > 0) {
+                                    addr.type = XPS_ADDR_TYPE_HOSTNAME;
                                     int len = pdata->data[4];
-                                    port = (pdata->data[5 + len] << 8) + pdata->data[6 + len];
+                                    addr.port = htons((pdata->data[5 + len] << 8) + pdata->data[6 + len]);
                                     xps_str_t host = { .len = len, .data = hostname + 5 };
+                                    addr.host = &host;
                                     xps_router_actions_t *router = c->inet->core->router;
-                                    c->endpoint = router->connect_byhost(router, &host, port);
+                                    c->endpoint = router->connect(router, &addr);
                                 }
                                 break;
                         }
@@ -93,7 +97,7 @@ XPS_INLINE void xps_input_socks_writer(xps_event_t *ev) {
                 //c->writer = xps_connection_transport_writer;
                 xps_connection_enable_reader(c);
                 xps_connection_disable_writer(c);
-                //c->endpoint->send(c->endpoint, 0);
+                xps_connection_disable_writer(c->endpoint);
             }
             return;
         }

@@ -82,6 +82,11 @@
 		6DCE0D8521CF4C3900D3936C /* xps_module.c in Sources */ = {isa = PBXBuildFile; fileRef = 6DCE0D8221CF4C3900D3936C /* xps_module.c */; };
 		6DCE0D8621CF4C3900D3936C /* xps_module.c in Sources */ = {isa = PBXBuildFile; fileRef = 6DCE0D8221CF4C3900D3936C /* xps_module.c */; };
 		6DCE0D8721CF4C3900D3936C /* xps_module.c in Sources */ = {isa = PBXBuildFile; fileRef = 6DCE0D8221CF4C3900D3936C /* xps_module.c */; };
+		6DDB2CFA21D374BE00E41B0A /* xps_dns.h in Headers */ = {isa = PBXBuildFile; fileRef = 6DDB2CF821D374BE00E41B0A /* xps_dns.h */; };
+		6DDB2CFB21D374BE00E41B0A /* xps_dns.h in Headers */ = {isa = PBXBuildFile; fileRef = 6DDB2CF821D374BE00E41B0A /* xps_dns.h */; };
+		6DDB2CFC21D374BE00E41B0A /* xps_dns.c in Sources */ = {isa = PBXBuildFile; fileRef = 6DDB2CF921D374BE00E41B0A /* xps_dns.c */; };
+		6DDB2CFD21D374BE00E41B0A /* xps_dns.c in Sources */ = {isa = PBXBuildFile; fileRef = 6DDB2CF921D374BE00E41B0A /* xps_dns.c */; };
+		6DDB2CFE21D374BE00E41B0A /* xps_dns.c in Sources */ = {isa = PBXBuildFile; fileRef = 6DDB2CF921D374BE00E41B0A /* xps_dns.c */; };
 		6DEFC16821CE098B00F55D08 /* XPS.h in Headers */ = {isa = PBXBuildFile; fileRef = 6DEFC16721CE098300F55D08 /* XPS.h */; };
 		6DEFC16921CE098C00F55D08 /* XPS.h in Headers */ = {isa = PBXBuildFile; fileRef = 6DEFC16721CE098300F55D08 /* XPS.h */; };
 		6DEFC16D21CE09F600F55D08 /* xps_core.c in Sources */ = {isa = PBXBuildFile; fileRef = 6DEFC16C21CE09F600F55D08 /* xps_core.c */; };
@@ -168,6 +173,8 @@
 		6DCE0D7A21CF4C1400D3936C /* xps_palloc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = xps_palloc.h; sourceTree = "<group>"; };
 		6DCE0D8121CF4C3900D3936C /* xps_module.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = xps_module.h; sourceTree = "<group>"; };
 		6DCE0D8221CF4C3900D3936C /* xps_module.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = xps_module.c; sourceTree = "<group>"; };
+		6DDB2CF821D374BE00E41B0A /* xps_dns.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = xps_dns.h; sourceTree = "<group>"; };
+		6DDB2CF921D374BE00E41B0A /* xps_dns.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = xps_dns.c; sourceTree = "<group>"; };
 		6DEFC16721CE098300F55D08 /* XPS.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XPS.h; sourceTree = "<group>"; };
 		6DEFC16B21CE09F600F55D08 /* xps_core.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = xps_core.h; sourceTree = "<group>"; };
 		6DEFC16C21CE09F600F55D08 /* xps_core.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = xps_core.c; sourceTree = "<group>"; };
@@ -316,6 +323,8 @@
 		6DA3900F21D281090097DC84 /* router */ = {
 			isa = PBXGroup;
 			children = (
+				6DDB2CF821D374BE00E41B0A /* xps_dns.h */,
+				6DDB2CF921D374BE00E41B0A /* xps_dns.c */,
 				6DA3901021D281A30097DC84 /* xps_router.h */,
 				6DA3901121D281A30097DC84 /* xps_router.c */,
 			);
@@ -385,6 +394,7 @@
 				6DA3901221D281A30097DC84 /* xps_router.h in Headers */,
 				6D1B58B021D1116A00957DD8 /* xps_output.h in Headers */,
 				6DEFC17421CE0B4800F55D08 /* xps_logger.h in Headers */,
+				6DDB2CFA21D374BE00E41B0A /* xps_dns.h in Headers */,
 				6DEFC19221CE4F0B00F55D08 /* xps_string.h in Headers */,
 				6DEFC18221CE35C600F55D08 /* xps_malloc.h in Headers */,
 				6D1B589821D0C65500957DD8 /* xps_action.h in Headers */,
@@ -414,6 +424,7 @@
 				6DA3901321D281A30097DC84 /* xps_router.h in Headers */,
 				6D1B58B121D1116A00957DD8 /* xps_output.h in Headers */,
 				6DEFC17521CE0B4800F55D08 /* xps_logger.h in Headers */,
+				6DDB2CFB21D374BE00E41B0A /* xps_dns.h in Headers */,
 				6DEFC19321CE4F0C00F55D08 /* xps_string.h in Headers */,
 				6DEFC18321CE35C600F55D08 /* xps_malloc.h in Headers */,
 				6D1B589921D0C65500957DD8 /* xps_action.h in Headers */,
@@ -564,6 +575,7 @@
 				6DEFC17821CE169B00F55D08 /* xps_sys.c in Sources */,
 				6D1B58BA21D117CE00957DD8 /* xps_connection.c in Sources */,
 				6D1FBA5121D1C7740017D2A1 /* xps_input_socks.c in Sources */,
+				6DDB2CFC21D374BE00E41B0A /* xps_dns.c in Sources */,
 				6DEFC19121CE4F0400F55D08 /* xps_string.c in Sources */,
 				6DEFC18C21CE3B8700F55D08 /* xps_queue.c in Sources */,
 				6D1FBA6E21D200220017D2A1 /* xps_inet.c in Sources */,
@@ -596,6 +608,7 @@
 				6D1FBA7321D214690017D2A1 /* xps_input_http.c in Sources */,
 				6DEFC18421CE35C800F55D08 /* xps_malloc.c in Sources */,
 				6DEFC19B21CE520B00F55D08 /* xps_rbtree.c in Sources */,
+				6DDB2CFD21D374BE00E41B0A /* xps_dns.c in Sources */,
 				6DEFC18D21CE3B8700F55D08 /* xps_queue.c in Sources */,
 				6D1B587821D07D3500957DD8 /* xps_kqueue.c in Sources */,
 				6D1FBA5621D1CC0A0017D2A1 /* xps_input.c in Sources */,
@@ -625,6 +638,7 @@
 				6D1FBA7421D214690017D2A1 /* xps_input_http.c in Sources */,
 				6DEFC18521CE35C900F55D08 /* xps_malloc.c in Sources */,
 				6DEFC19C21CE520B00F55D08 /* xps_rbtree.c in Sources */,
+				6DDB2CFE21D374BE00E41B0A /* xps_dns.c in Sources */,
 				6DEFC18E21CE3B8700F55D08 /* xps_queue.c in Sources */,
 				6D1B587921D07D3500957DD8 /* xps_kqueue.c in Sources */,
 				6D1FBA5721D1CC0A0017D2A1 /* xps_input.c in Sources */,

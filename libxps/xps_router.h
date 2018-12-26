@@ -16,8 +16,7 @@ typedef struct xps_connection       xps_connection_t;
 typedef struct xps_router_actions   xps_router_actions_t;
 
 struct xps_router_actions {
-    xps_connection_t *(*connect_byip)(xps_router_actions_t *acts, in_addr_t addr, uint16_t port);
-    xps_connection_t *(*connect_byhost)(xps_router_actions_t *acts, xps_str_t *hostname, uint16_t port);
+    xps_connection_t *(*connect)(xps_router_actions_t *acts, xps_inet_addr_t *addr);
 };
 
 
